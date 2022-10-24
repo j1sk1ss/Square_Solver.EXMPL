@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Square_Solver.EXMPL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        ResizeMode="NoResize"
+        WindowStyle="ToolWindow"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid Height="450" Width="800">
+        <Label FontSize="25" HorizontalAlignment="Center" Margin="0,0,0,400"> РЕШАТЕЛЬ КВАДРАТНЫХ УРАВНЕНИЙ: </Label>
+        <Label FontSize="25" HorizontalAlignment="Center" Margin="-100,30,500,380"> УРАВНЕНИЕ: </Label>
+        <Label FontSize="20" HorizontalAlignment="Center" Margin="-80,70,500,0"> x^2 </Label>
+        <Label FontSize="20" HorizontalAlignment="Center" Margin="-200,70,0,0"> x </Label>
+        <Label FontSize="20" HorizontalAlignment="Center" Margin="150,70,0,0"> = </Label>
+        <Label x:Name = "AnswerLabelOne" FontSize="25" HorizontalAlignment="Center" Margin="0,150,0,250"></Label>
+        <Button Height="25" Width="100" Margin="650,380,0,0" Click="Calculate"> ВЫЧИСЛИТЬ! </Button>
+        <TextBox x:Name="VariableA" Margin="-200,-260,500,10" Height="35" Width="70" TextAlignment="Center" FontSize="24"> A </TextBox>
+            <ComboBox x:Name = "BCof" Margin="25,-260,500,10" Height="35" Width="50" FontSize="25">
+                <ComboBoxItem x:Name = "FirstPlus" FontSize="25">+</ComboBoxItem>
+                <ComboBoxItem x:Name = "FirstMinus" FontSize="25">-</ComboBoxItem>
+            </ComboBox>
+        <TextBox x:Name="VariableB" Margin="170,-260,500,10" Height="35" Width="70" TextAlignment="Center" FontSize="24"> B </TextBox>
+            <ComboBox x:Name = "CCof" Margin="-100,-260,0,10" Height="35" Width="50" FontSize="25">
+                <ComboBoxItem x:Name = "SecondPlus" FontSize="25">+</ComboBoxItem>
+                <ComboBoxItem x:Name = "SecondMinus" FontSize="25">-</ComboBoxItem>
+            </ComboBox>
+        <TextBox x:Name = "VariableC" Margin="50,-260,0,10" Height="35" Width="70" TextAlignment="Center" FontSize="24"> C </TextBox>
+        <Grid x:Name="AnswerSection" Visibility="Hidden" Margin="0,240,0,0">
+            <Grid>
+                <Label FontSize="25"> x1 = </Label>
+                <Label FontSize="20" Margin="100,-20,0,0"> -b - √(b^2 - 4ac)</Label>
+                <Label FontSize="20" Margin="160,20,0,0"> 2а</Label>
+                <Canvas Background="Black" Margin="100,18,520,190"></Canvas>
+            </Grid>
+            <Grid x:Name="SecondExample" Margin="0,100,0,0">
+                <Label FontSize="25"> x2 = </Label>
+                <Label FontSize="20" Margin="100,-20,0,0"> -b + √(b^2 - 4ac)</Label>
+                <Label FontSize="20" Margin="160,20,0,0"> 2а</Label>
+                <Canvas Background="Black" Margin="100,18,520,90"></Canvas>
+            </Grid>
+            <Grid x:Name="FirstValue" Margin="250,0,0,0">
+                <Label FontSize="25" Margin="50,0,0,0"> = </Label>
+                <Label FontSize="25" Margin="300,0,0,0"> = </Label>
+                <Label x:Name="Answer1" FontSize="25" Margin="350,0,0,0"> 12.2 </Label>
+                <Label x:Name="FirstUpperAnswer" FontSize="20" Margin="100,-20,0,0"> -b - √(b^2 - 4ac)</Label>
+                <Label x:Name="FirstDownerAnswer" FontSize="20" Margin="160,20,0,0"> 2а</Label>
+                <Canvas Background="Black" Margin="100,18,270,190"></Canvas>
+            </Grid>
+            <Grid x:Name="SecondValue" Margin="250,100,0,0">
+                <Label FontSize="25" Margin="50,0,0,0"> = </Label>
+                <Label FontSize="25" Margin="300,0,0,0"> = </Label>
+                <Label x:Name="Answer2" FontSize="25" Margin="350,0,0,0"> 12.2 </Label>
+                <Label x:Name="SecondUpperAnswer" FontSize="20" Margin="100,-20,0,0"> -b + √(b^2 - 4ac)</Label>
+                <Label x:Name="SecondDownerAnswer" FontSize="20" Margin="160,20,0,0"> 2а</Label>
+                <Canvas Background="Black" Margin="100,18,270,90"></Canvas>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

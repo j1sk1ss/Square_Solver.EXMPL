@@ -1,28 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Square_Solver.EXMPL.SCRIPTS;
 
-namespace Square_Solver.EXMPL
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
+namespace Square_Solver.EXMPL {
+    public partial class MainWindow : Window {
+        public MainWindow() {
             InitializeComponent();
+        }
+        private void Calculate(object sender, RoutedEventArgs e) {
+            AnswerSection.Visibility = Visibility.Visible;
+            AnswerLabelOne.Content = "РЕШЕНИЕ:";
+            try {
+                SquareSolver solver = new(double.Parse( $"{VariableA.Text}"), double.Parse( $"{BCof.Text}{VariableB.Text}"),
+                    double.Parse($"{CCof.Text}{VariableC.Text}"));
+                solver.Calculate();
+                FirstUpperAnswer.Content = -solver.B - solver.D;
+                FirstDownerAnswer.Content = solver.A * 2 + " ";
+                SecondUpperAnswer.Content = -solver.B + solver.D;
+                SecondDownerAnswer.Content = solver.A * 2 + " ";
+                if (solver.SecondValue != 0)
+                {
+                    Answer1.Content = solver.FirstValue;
+                    Answer2.Content = solver.SecondValue;
+                }
+                else
+                {
+                    Answer1.Content = solver.FirstValue;
+                    SecondExample.Visibility = Visibility.Hidden;
+                    SecondValue.Visibility = Visibility.Hidden;
+                }
+            }
+            catch (Exception exception) {
+                MessageBox.Show($"{e}", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
     }
 }

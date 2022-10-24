@@ -5,12 +5,12 @@ namespace Square_Solver.EXMPL.SCRIPTS
 {
     public class SquareSolver
     {
-        public double D { get; set; }
+        public double D { get; private set; }
         public double A { get; set; }
         public double B { get; set; }
-        public double C { get; set; }
-        public double FirstValue { get; set; }
-        public double SecondValue { get; set; }
+        private double C { get; set; }
+        public double FirstValue { get; private set; }
+        public double SecondValue { get; private set; }
         public SquareSolver() {
             A = 0;
             B = 0;

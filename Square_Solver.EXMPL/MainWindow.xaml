@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Square_Solver.EXMPL"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="ToolWindow"
@@ -15,7 +14,6 @@
         <Label FontSize="20" HorizontalAlignment="Center" Margin="-200,70,0,0"> x </Label>
         <Label FontSize="20" HorizontalAlignment="Center" Margin="150,70,0,0"> = </Label>
         <Label x:Name = "AnswerLabelOne" FontSize="25" HorizontalAlignment="Center" Margin="0,150,0,250"></Label>
-        <Button Height="25" Width="100" Margin="650,380,0,0" Click="Calculate"> ВЫЧИСЛИТЬ! </Button>
         <TextBox x:Name="VariableA" Margin="-200,-260,500,10" Height="35" Width="70" TextAlignment="Center" FontSize="24"> A </TextBox>
             <ComboBox x:Name = "BCof" Margin="25,-260,500,10" Height="35" Width="50" FontSize="25">
                 <ComboBoxItem x:Name = "FirstPlus" FontSize="25">+</ComboBoxItem>
@@ -57,5 +55,6 @@
                 <Canvas Background="Black" Margin="100,18,270,90"></Canvas>
             </Grid>
         </Grid>
+        <Button Height="25" Width="100" Margin="650,380,0,0" Click="Calculate"> ВЫЧИСЛИТЬ! </Button>
     </Grid>
 </Window>

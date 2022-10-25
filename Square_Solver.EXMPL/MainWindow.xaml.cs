@@ -12,9 +12,9 @@ namespace Square_Solver.EXMPL {
                 SquareSolver solver = new(double.Parse( $"{VariableA.Text}"), double.Parse( $"{BCof.Text}{VariableB.Text}"),
                     double.Parse($"{CCof.Text}{VariableC.Text}"));
                 solver.Calculate();
-                FirstUpperAnswer.Content = -solver.B - solver.D;
+                FirstUpperAnswer.Content = $"{-solver.B} - √{solver.D}";
                 FirstDownerAnswer.Content = solver.A * 2 + " ";
-                SecondUpperAnswer.Content = -solver.B + solver.D;
+                SecondUpperAnswer.Content = $"{-solver.B} + √{solver.D}";
                 SecondDownerAnswer.Content = solver.A * 2 + " ";
                 AnswerSection.Visibility = Visibility.Visible;
                 AnswerLabelOne.Content = "РЕШЕНИЕ:";
